@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>중첩 조건문</title>
+    <script>
+        var date = new Date();
+        var hours = date.getHours() 
+
+       if (hours < 6 || hours >= 23) {
+            console.log('취침시간');
+        } else {
+            if (hours < 9) {
+            console.log('학원가자');
+            } else {
+                if (hours < 13) {
+                    console.log('오전공부');
+                } else {
+                    if (hours < 14) {
+                        console.log('점심시간');
+                    } else {
+                        if (hours < 20) {
+                            console.log('오후공부');
+                        } else {
+                            if ( hours < 23) {
+                                console.log('정비');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+ 
+       
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
