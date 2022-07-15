@@ -4,32 +4,36 @@
     <title>중첩 조건문</title>
     <script>
         var date = new Date();
-        var hours = date.getHours() 
+        var hours = date.getHours();
 
-       if (hours < 6 || hours >= 23) {
-            console.log('취침시간');
-        } else {
-            if (hours < 9) {
-            console.log('학원가자');
-            } else {
-                if (hours < 13) {
-                    console.log('오전공부');
-                } else {
-                    if (hours < 14) {
-                        console.log('점심시간');
-                    } else {
-                        if (hours < 20) {
-                            console.log('오후공부');
-                        } else {
-                            if ( hours < 23) {
-                                console.log('정비');
-                            }
-                        }
-                    }
-                }
-            }
+        if(hours <1 ){
+            console.log('자야한다.')
         }
- 
+        else if(hours < 6 ){
+            console.log('꿈을 꾸자')
+        }
+        else if(hours < 7){
+            console.log('일어나!')
+        }
+        else if(hours < 8){
+            console.log('학원가자')
+        }
+        else if(hours < 13){
+            console.log('오전 수업!')
+        }
+        else if(hours < 14){
+            console.log('점심시간')
+        }
+        else if(hours < 18){
+            console.log('오후 수업!')
+        }
+        else if(hours < 22){
+            console.log('집 휴식!')
+        }
+        else{
+            console.log('자야해..')
+        }
+
        
 
 
