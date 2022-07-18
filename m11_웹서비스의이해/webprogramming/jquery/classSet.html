@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px; height: 100px;
+            background-color: red;
+        }
+
+        #box.hover {
+            background-color: blue;
+            border-radius: 50px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#box').hover(function(){
+                $('#box').addClass('hover');
+            }, function(){
+                $('#box').removeClass('hover');
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    
+</body>
+</html>
