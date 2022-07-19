@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <title>Document</title>
+    <script>
+        // 이벤트를 연결합니다.
+        window.onload = function () {
+            // 문서 객체를 선택합니다.
+            var input_1 = document.querySelectorAll('input')[0];
+            var input_2 = document.querySelectorAll('input')[1];
+            // input_1
+            input_1.onkeydown = function () {
+                // 글자 개수가 여섯 개 이상일 경우
+                if (6 <= input_1.value.length) {
+                    // input_2 문서 객체로 초점을 이동합니다.
+                    input_2.focus();
+                }
+            };
+            // input_2
+            input_2.onkeydown = function (event) {
+                // 이벤트 객체를 추출합니다.
+                var event = event || window.event;
+                // 사용자의 입력이 '백 스페이스'이고 입력된 글자가 없는 경우
+                if (event.keyCode == 8 && input_2.value.length == 0) {
+                    input_1.focus();
+                }
+            };
+        };
+    </script>
+
+</head>
+<body>
+    <input type="text" maxlength="6" />
+    <span>-</span>
+    <input type="text" maxlength="7" />
+</body>
+</html>
