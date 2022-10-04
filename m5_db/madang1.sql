@@ -149,3 +149,50 @@ PRIMARY KEY (bookid));
 DESC newbook;
 
 DROP TABLE newbook;
+
+CREATE TABLE newcustomer(
+custid NUMBER PRIMARY KEY,
+name VARCHAR2(40),
+address VARCHAR2(40),
+phone VARCHAR2(30));
+
+DESC newcustomer;
+DESC orders;
+CREATE TABLE neworders(
+orderid NUMBER,
+custid NUMBER NOT NULL,
+bookid NUMBER NOT NULL,
+saleprice NUMBER,
+orderdate DATE,
+PRIMARY KEY(orderid),
+FOREIGN KEY(custid) REFERENCES newcustomer(custid) ON DELETE CASCADE);
+
+DESC neworders;
+
+CREATE TABLE newbook(
+bookid NUMBER PRIMARY KEY,
+bookname VARCHAR2(20) NOT NULL,
+publisher VARCHAR2(20) UNIQUE,
+price NUMBER DEFAULT 10000 CHECK(price>1000));
+
+DESC newbook;
+ALTER TABLE newbook ADD isbn VARCHAR2(15);
+
+--과제_1024_1. newbook 테이블의 isbn 속성을 삭제하세요.
+--과제_1024_2. newbook 테이블의 기본키를 삭제한 후 다시 bookid 속성을 기본키로 변경하세요.
+--과제_1024_3. newbook 테이블을 삭제하세요.
+
+SELECT * FROM customer;
+--Q. CUSTOMER 테이블에서 고객번호가 5인 고객의 주소를 '대한민국 부산'으로 변경.
+UPDATE customer
+SET address = '대한민국 부산'
+WHERE custid =5;
+
+--Q. CUSTOMER 테이블에서 박세리 고객의 주소를 김연아 고객의 주소로 변경
+update customer
+set address = (select address from customer where name = '김연아')
+where custid = 5;
+
+--Q. CUSTOMER 테이블에서 고객번호가 5인 고객을 삭제한 후 결과를 확인
+DELETE customer
+WHERE custid = 5;
