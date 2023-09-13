@@ -1,4 +1,4 @@
-## CAKD7 : 중앙 K-Digital Training 7기 "빅데이터 기반 AI 응용 솔루션 개발자 전문과정" 
+## K-Digital Training : "빅데이터 기반 AI 응용 솔루션 개발자 전문과정" 
 
 #### 요소 기술
 
